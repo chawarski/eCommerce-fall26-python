@@ -3,8 +3,6 @@ Simple eCommerce project to demonstrate python usage for DSCI 6602 fall 2026
 
 Create a eCommerce platform that simulates the sales of ELECTRONICS: phones, accessories, computers, etc
 
-Need a design for product attributes: name, SKU, category,description, price, picture
-
 Need to use SQL server for product warehouse simulating the product stock
 
 Need a flask server with a local webpage to interact with SQL server for DB
@@ -23,3 +21,9 @@ Need a flask server with a local webpage to interact with SQL server for DB
   
 - (optional) CUSTOMIZE FRAMEWORK FOR OTHER PRODUCT TYPES. *Note: this should be inherent with our Product Crud page. You could remove all products and repopulate with anything.*
 
+
+## DB Design
+| id | category | name | part_number | description | image | price | quantity |
+| -- | -- | -- | --| -- | -- | -- | -- |
+| 0 | GPU | nVidia RTX 5090 | G-RTX-5090 | GeForce RTX 5090 32GB GDDR7 PCI Express 5.0 ATX Graphics Card 32GD | img | $6500 | 10 |
+| 1 | phone | Apple iPhone Duo | IP-DUO-256 | iPhone Duo 256GB Night Sky | img | $1999 | 10 |
