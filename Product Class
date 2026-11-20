@@ -1,0 +1,22 @@
+from dataclasses import dataclass
+from decimal import Decimal
+from typing import Optional
+
+#Creates a Class for storing product information
+@dataclass
+class Product:
+    #Required product info
+    category: str
+    name: str
+    price: Decimal
+    quantity: int
+
+    #Optional product info
+    Sku: Optional[str] = None
+    Description: Optional[str] = None
+    Image: Optional[str] = None
+
+#Runs when product is created
+def __post_init__(self)-> None:
+
+#Not Done Yet Currently Still Working on it
