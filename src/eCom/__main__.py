@@ -1,4 +1,4 @@
-# from .webapp import app
+from .webapp import app
 import pymysql
 from . import database
 
@@ -21,6 +21,8 @@ def main() -> None:
     print(df.head())
 
     # do something with the DataFrame object
+
+    app.run(debug=True)
 
 
 if __name__ == "__main__":
