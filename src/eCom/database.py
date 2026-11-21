@@ -42,9 +42,11 @@ if True: # DB creation, can turn on/off
     except Exception as e:
         print(f"SQL Connection Error: {e}")
         connection.close()
-        raise SystemExit(1) from e
-
-if True: # product insertion can turn on/off
+ 
+if True: # product insertion can turn on/off 
+    file = open(r"eCommerce-fall26-python\src\inventory\electronics_shop_inventory.csv")
+    product_list = file.read().split("\n")
+ 
     try:
         with connection.cursor() as cursor:
             # Optional: Load raw image bytes if using MEDIUMBLOB (or pass a string path/URL if using VARCHAR)
@@ -55,22 +57,23 @@ if True: # product insertion can turn on/off
                 INSERT INTO products (category, name, sku, description, image, price, quantity)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
             """
-            
-            product_row = (
-                "GPU",
-                "nVidia RTX 5090",
-                "G-RTX-5090",
-                "GeForce RTX 5090 32GB GDDR7 PCI Express 5.0 ATX Graphics Card 32GD",
-                None,  # Use None if we don't have an image
-                6500,
-                250
-            )
+            row_data = [product.split(',') for index, product in enumerate(product_list) if index > 0]
+            for row in row_data:
+                product_row = (
+                    row[0],
+                    row[1],
+                    row[2],
+                    row[3],
+                    None,  # Use None if we don't have an image
+                    row[5],
+                    row[6]
+                )
 
-            cursor.execute(sql, product_row)
-            print(f"Product inserted with ID: {cursor.lastrowid}")
+                cursor.execute(sql, product_row)
+                print(f"Product inserted with ID: {cursor.lastrowid}")
 
-        # Commit the transaction so the row is saved to the database
-        connection.commit()
+                # Commit the transaction so the row is saved to the database
+                connection.commit()
 
     except pymysql.IntegrityError as e:
         # Triggers if part_number already exists (due to the UNIQUE constraint)
@@ -87,7 +90,7 @@ if True:
     # Format: mysql+pymysql://username:password@host:port/database_name
     engine = create_engine(f"mysql+pymysql://root:chargerhorse@localhost:3306/{db_name}")
 
-    # 2. Read an entire table or run a custom SQL query
+    # Read table or run a custom SQL query
     query = "SELECT id, category, name, sku, description, price, quantity FROM products"
     df = pd.read_sql(query, con=engine)
 

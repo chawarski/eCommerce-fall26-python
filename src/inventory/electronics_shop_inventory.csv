@@ -1,0 +1,11 @@
+category,name,sku,description,image,price,quantity
+GPUs,NVIDIA GeForce RTX 5080 Founders Edition,GPU-NV-5080FE,16GB GDDR7 graphics card with next-gen ray tracing and DLSS 4 support.,/images/products/rtx-5080-fe.jpg,999.99,12
+GPUs,AMD Radeon RX 8800 XT,GPU-AMD-8800XT,16GB GDDR6 high-performance gaming GPU with FSR 4 and AV1 encoding.,/images/products/rx-8800-xt.jpg,649.99,18
+Cellphones,Apple iPhone 17 Pro 256GB,PHN-APL-17P256,6.3-inch ProMotion OLED display with A19 Pro chip and Titanium finish.,/images/products/iphone-17-pro.jpg,1099.0,25
+Cellphones,Samsung Galaxy S26 Ultra 512GB,PHN-SAM-S26U512,6.8-inch Dynamic AMOLED 2X featuring built-in S Pen and 200MP quad camera system.,/images/products/galaxy-s26-ultra.jpg,1299.99,15
+Cellphones,Google Pixel 10 Pro 256GB,PHN-GGL-PX10P,Tensor G5 processor with Super Actua display and advanced AI camera features.,/images/products/pixel-10-pro.jpg,999.0,20
+RAM,Corsair Vengeance RGB 32GB (2x16GB) DDR5-6400,RAM-CRS-32G6400,High-speed DDR5 desktop memory kit with customizable ten-zone RGB lighting.,/images/products/corsair-ddr5-32gb.jpg,124.99,45
+RAM,G.Skill Trident Z5 Neo 64GB (2x32GB) DDR5-6000,RAM-GSK-64G6000,CL30 low-latency dual-channel DDR5 memory optimized for AMD Ryzen systems.,/images/products/gskill-z5-64gb.jpg,219.99,30
+Accessories,Anker Prime 100W GaN USB-C Wall Charger,ACC-ANK-100WGAN,Compact 3-port fast charger with foldable prongs for laptops and phones.,/images/products/anker-100w-gan.jpg,69.99,60
+Accessories,Logitech MX Master 3S Wireless Mouse,ACC-LOG-MXM3S,Ergonomic productivity mouse with 8K DPI sensor and quiet clicks.,/images/products/logitech-mx-master-3s.jpg,99.99,40
+Accessories,Apple AirPods Pro (3rd Generation),ACC-APL-APP3,Active noise cancellation wireless earbuds with USB-C MagSafe charging case.,/images/products/airpods-pro-3.jpg,249.0,35
