@@ -13,7 +13,7 @@ def main() -> None:
         if database.createDB():
             print("Sucessfully created SQL database")
 
-    if False: # you only need to run this one time to creas table, or when we expand the inventory csv
+    if False: # you only need to run this one time to create table, or when we expand the inventory csv
         if database.createInventory():
             print("Successfully populated database with products")
 

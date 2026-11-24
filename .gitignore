@@ -1,0 +1,3 @@
+.venv/
+src\eCom\__pycache__
+.env
