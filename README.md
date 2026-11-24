@@ -14,6 +14,7 @@ Need a flask server with a local webpage to interact with SQL server for DB
 - **PRODUCT CATALOG PAGE**: 'customer' page with grid layout for viewing all products w/ **IMAGES, SPECS, ADD TO CART BUTTONS** [@app.route("/catalog")]
   
 - **PRODUCT CRUD PAGE**: 'admin' page for **search, create, read, update, delete** products from DB, enforcing DB design. **SUPPLY SIDE WAREHOUSE COUNTS** [@app.route("/products")]
+-   need testing to make sure product values are valid
   
 - **SHOPPING CART**: 'customer' page for viewing, editing shopping cart. **"BUY WITH SHOPPING CART, COUNT GOES UP/DOWN. UPDATE ON CART SHOULD UPDATE QUANTITY, NOT JUST ADD NEW LINES"** [@app.route("/cart")]
   
