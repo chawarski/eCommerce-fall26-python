@@ -11,6 +11,8 @@ app = Flask (__name__)
 # Format: mysql+pymysql://username:password@host:port/database_name
 engine = create_engine(f"mysql+pymysql://{USER}:{PASSWORD}@localhost:3306/{DB_NAME}")
 
+
+
 @app.route("/")
 def index():
     category = request.args.get("category")
