@@ -98,6 +98,3 @@ def getDFfromSQL() -> pd.DataFrame:
 
     # print(df.head())
     return df
-
-createDB()
-createInventory()

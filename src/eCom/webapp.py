@@ -29,12 +29,12 @@ def index():
 def cart():
     # get shopping cart mini-DB and items in cart
     # Clicking on "add to cart" in catalog will add items to cart DB
-    # cart needs buttons to change quantity/ delete items
+    # cart needs buttons to change quantity/ delete items, responds to POST 
     #   return render_template("cart.html", products=items)
     return f"<h1> Create Shopping Cart </h1> <p> <h2> cool </h2>"
 
 @app.route("/admin")
-def cart():
+def admin():
     # display current inventory in verbose (editable) table
     # SCRUD capability: Search-Create-Read-Update-Delete
     # 
