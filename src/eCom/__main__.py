@@ -22,7 +22,7 @@ def main() -> None:
 
     # do something with the DataFrame object
 
-    app.run(debug=True)
+    app.run(debug=False)
 
 
 if __name__ == "__main__":

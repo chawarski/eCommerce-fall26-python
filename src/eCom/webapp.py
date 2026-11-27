@@ -15,16 +15,33 @@ engine = create_engine(f"mysql+pymysql://{USER}:{PASSWORD}@localhost:3306/{DB_NA
 
 @app.route("/")
 def index():
+    # Search
+    search_query = request.args.get("query", "").strip()
+
+    # Category filtering, using the nav buttons, if there is a category request
     category = request.args.get("category")
     if category:
         query = "SELECT id, category, name, sku, description, image, price, quantity FROM products WHERE category = %(cat)s"
         df = pd.read_sql(query, con=engine, params={"cat": category})
-    else:
-        query = "SELECT id, category, name, sku, description, image, price, quantity FROM products"
-        df = pd.read_sql(query, con=engine)
 
+    params = {}
+    query = """
+        SELECT id, category, name, sku, description, image, price, quantity
+        FROM products
+        WHERE 1=1
+    """
+    # If there is a search request
+    if search_query:
+        query += """
+            AND (name LIKE %(search)s
+                OR sku LIKE %(search)s
+                OR description LIKE %(search)s)
+        """
+        params["search"] = f"%{search_query}%"
+
+    df = pd.read_sql(query, con=engine, params=params)
     products = df.to_dict(orient="records")
-    return render_template("index.html", products=products)
+    return render_template("index.html", products=products, search_query=search_query)
     # add "Go to Cart" button
 
 @app.route("/cart")
